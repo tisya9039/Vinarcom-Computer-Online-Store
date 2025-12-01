@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Vinarcom Computer — New Laptops</title>
+  <meta name="description" content="New laptops at Vinarcom Computer — latest models, high performance and quality checked" />
+  <style>
+    :root{
+      --bg:#0b2bd6;
+      --card:#ffffff;
+      --muted:#4b5563;
+      --accent:#06c167;
+      --brand:#ffdd00;
+      --maxw:1200px;
+      --radius:12px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.12);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#0621b6 0%, #0b2bd6 100%);color:#0b1220}
+    .wrap{min-height:100%;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px}
+    .site{width:100%;max-width:var(--maxw);background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    header{display:flex;align-items:center;gap:18px;padding:22px 28px;border-bottom:1px solid #eef2f6;background:linear-gradient(90deg,#ffffff 0%, #f8fbff 100%)}
+    .logo{background:linear-gradient(135deg,#0f62fe,#4f46e5);color:#fff;padding:10px 14px;border-radius:10px;font-weight:800}
+    .title{font-size:18px;font-weight:700;color:var(--brand)}
+    nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+    nav a{background:transparent;border:1px solid var(--accent);color:var(--accent);padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;transition:all .12s}
+    nav a:hover{background:var(--accent);color:white;transform:translateY(-2px)}
+    nav a.active{background:var(--accent);color:white;border:0}
+    main{padding:28px 32px}
+    .hero{display:flex;align-items:center;gap:20px;justify-content:space-between;flex-wrap:wrap}
+    .hero-left{max-width:720px}
+    h1{margin:0;font-size:28px;color:#0b1220}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    .controls{display:flex;gap:12px;align-items:center;margin-top:12px}
+    .search{display:flex;gap:8px}
+    .search input{padding:10px 12px;border-radius:8px;border:1px solid #e6edf3;width:240px}
+    .search select{padding:10px;border-radius:8px;border:1px solid #e6edf3}
+    .btn-filter{background:#f3b84b;padding:9px 12px;border-radius:8px;border:0;color:#1b1b1b;font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .card{background:linear-gradient(180deg,#ffffff,#fcfdff);border-radius:12px;padding:14px;border:1px solid #eef2f6;box-shadow:0 6px 18px rgba(2,6,23,0.04);display:flex;flex-direction:column;align-items:stretch}
+    .thumb{height:270px;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .thumb img{max-width:100%;max-height:100%;object-fit:contain}
+    .card h3{font-size:16px;margin:10px 0 6px;color:#0b1220;text-align:left}
+    .price{font-weight:800;color:#0b1220;margin-top:6px}
+    .specs{font-size:13px;color:var(--muted);margin-top:8px;display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+    .specs div{background:#fbfdff;padding:6px;border-radius:6px;border:1px solid #f1f5f9}
+    .card-actions{display:flex;gap:8px;align-items:center;margin-top:12px}
+    .add{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;border:0;font-weight:700;cursor:pointer}
+    .details{background:transparent;border:1px solid #e6edf3;padding:8px 10px;border-radius:8px;cursor:pointer}
+    .cart-btn{position:relative;margin-left:6px}
+    .cart-count{position:absolute;top:-6px;right:-8px;background:#ff4d4f;color:white;padding:4px 7px;border-radius:999px;font-size:12px}
+    .modal{position:fixed;right:20px;top:80px;width:360px;max-height:70vh;background:var(--card);border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.14);overflow:auto;padding:14px;z-index:120;display:none}
+    .modal.open{display:block}
+    .cart-item{display:flex;gap:10px;align-items:center;border-bottom:1px solid #f3f6f9;padding:10px 0}
+    .cart-item img{width:58px;height:44px;object-fit:contain;border-radius:6px}
+    footer{padding:18px 32px;background:#fbfdff;border-top:1px solid #eef2f6;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    @media (max-width:1100px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:700px){ .grid{grid-template-columns:1fr} .search input{width:140px} .hero{flex-direction:column;align-items:flex-start} nav{width:100%;justify-content:flex-end} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="site" role="document">
+      <header>
+        <div class="logo">VC</div>
+        <div>
+          <div class="title">Vinarcom Computer</div>
+          <div style="font-size:13px;color:var(--muted)">Quality PCs · Networking · Cloud</div>
+        </div>
+
+        <nav aria-label="Main navigation">
+          <a href="index.html" >Home</a>
+          <a href="recond.html">Shop - Recon Laptops,PC and Monitor</a>
+          <a href="newcom.html" style="background:var(--accent);color:white;border:0">Shop - New Laptops</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-left">
+            <h1>New Laptops — Latest Models</h1>
+            <p class="lead">Discover our collection of brand-new laptops with high performance and reliability.</p>
+            <div class="controls">
+              <div class="search">
+  <input id="searchInput" type="text" placeholder="Search laptops..." />
+  <select id="sortPrice">
+    <option value="">Sort by</option>
+    <option value="low-high">Price: Low → High</option>
+    <option value="high-low">Price: High → Low</option>
+  </select>
+  <button id="filterBtn">Filter</button>
+</div>
+
+              <div style="margin-left:auto;display:flex;align-items:center">
+                <button id="openCart" class="details cart-btn">🛒 Cart <span id="cartCount" class="cart-count">0</span></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="productsArea">
+          <div id="grid" class="grid" aria-live="polite"></div>
+        </section>
+      </main>
+
+      <footer>
+        <div>© Vinarcom Computer — All rights reserved</div>
+        <div style="font-size:13px;color:var(--muted)">Trusted IT solutions since 2004</div>
+      </footer>
+    </div>
+  </div>
+
+  <div id="cartModal" class="modal" aria-hidden="true">
+    <h3>Shopping Cart</h3>
+    <div id="cartItems"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+      <strong>Total:</strong>
+      <div id="cartTotal">$0.00</div>
+    </div>
+    <div style="margin-top:12px;display:flex;gap:8px">
+      <button id="checkoutBtn" class="add" style="flex:1">Checkout</button>
+      <button id="closeCart" class="details" style="flex:1">Close</button>
+    </div>
+  </div>
+
+<script>
+  // ---------- Data ----------
+  const products = [
+    { id:1, name:'ASUS Vivobook', price: 2199, img:'images/newlaptopasus1.jpg', category:'laptop', specs:{CPU:'AMD Ryzen™ 5 7520U',RAM:'8GB',Storage:'512GB SSD',GPU:'AMD Radeon™ Graphics',Display:'15.6-inch, FHD (1920 x 1080)',OS:'Windows 11'} },
+    { id:2, name:'ASUS TUF Gaming Laptop', price: 5699, img:'images/newlaptopasus2.jpg', category:'laptop', specs:{CPU:'AMD Ryzen™ 7 260',RAM:'16GB',Storage:'512GB SSD',GPU:'NVIDIA GeForce RTX 5050',Display:'16\" FHD 16:10 (1920 x 1200)',OS:'Windows 11'} },
+    { id:3, name:'HP Elitebook 8 G1', price: 4899, img:'images/newlaptophp3.jpg', category:'laptop', specs:{CPU:'Intel Core Ultra 5',RAM:'32GB',Storage:'512GB SSD',GPU:'RTX 4060',Display:'14\" diagonal WUXGA',OS:'Windows 11 pro'} },
+    { id:4, name:'HP 14 Notebook', price: 1899, img:'images/newlaptophp4.jpg', category:'laptop', specs:{CPU:'AMD Ryzen 3 7320U',RAM:'8GB',Storage:'512GB SSD',GPU:'AMD Radeon Graphics',Display:'16\" QHD',OS:'Windows 11'} },
+    { id:5, name:'ACER Aspire Lite 15', price: 2399, img:'images/newlaptopacer5.jpg', category:'laptop', specs:{CPU:'AMD Ryzen 7 5700 U',RAM:'16GB DDR4',Storage:'512GB SSD',GPU:'AMD Radeon Graphics',Display:'15.6\" FHD IPS',OS:'Windows 11'} },
+    { id:6, name:'ACER Aspire Lite 14', price: 1799, img:'images/newlaptopacer6.jpg', category:'laptop', specs:{CPU:'Intel Core 3-N355',RAM:'8GB',Storage:'512GB SSD',GPU:'Intel UHD Graphics',Display:'14\" WUXGA IPS',OS:'Windows 11'} },
+  ];
+
+  // ---------- State & DOM ----------
+  const CART_KEY = 'vinarcomCart';
+  const cart = []; // runtime cart (will be populated from localStorage)
+  const grid = document.getElementById('grid');
+  const cartCount = document.getElementById('cartCount');
+  const cartModal = document.getElementById('cartModal');
+  const cartItems = document.getElementById('cartItems');
+  const cartTotal = document.getElementById('cartTotal');
+  const openCartBtn = document.getElementById('openCart');
+  const closeCartBtn = document.getElementById('closeCart');
+
+  // search & sort controls
+  const searchInput = document.getElementById('searchInput');
+  const sortSelect = document.getElementById('sortPrice');
+  const filterBtn = document.getElementById('filterBtn');
+
+  // ---------- Utilities ----------
+  function formatMYR(n){ return 'RM' + n.toLocaleString(); }
+
+  function loadCart() {
+    try {
+      return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+    } catch(e) {
+      console.error('Failed to parse cart from localStorage', e);
+      return [];
+    }
+  }
+
+  function saveCartToStorage() {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const totalQty = cart.reduce((s,i)=>s + (i.qty || 0), 0);
+    cartCount.textContent = totalQty;
+  }
+
+  // ---------- Render Products ----------
+  function renderProducts(list){
+    grid.innerHTML = '';
+    list.forEach(p => {
+      const c = document.createElement('article');
+      c.className = 'card';
+      let specsHtml = '';
+      for(const [k,v] of Object.entries(p.specs || {})){
+        specsHtml += `<div><strong>${k}</strong><div>${v}</div></div>`;
+      }
+      c.innerHTML = `
+        <div class="thumb"><img loading="lazy" src="${p.img}" alt="${p.name}"></div>
+        <h3 contenteditable="false" data-id="${p.id}">${p.name}</h3>
+        <div class="price">${formatMYR(p.price)}</div>
+        <div class="specs" aria-hidden="false">${specsHtml}</div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+          <button class="add" data-id="${p.id}">Add to Cart</button>
+          <button class="details" data-id="${p.id}">View</button>
+        </div>
+      `;
+      grid.appendChild(c);
+    });
+
+    // attach handlers
+    grid.querySelectorAll('.add').forEach(b => b.addEventListener('click', e => addToCart(+e.currentTarget.dataset.id)));
+    grid.querySelectorAll('.details').forEach(b => b.addEventListener('click', e => viewDetails(+e.currentTarget.dataset.id)));
+  }
+
+  // ---------- Cart functions ----------
+  function findCartIndex(id){ return cart.findIndex(x => x.id === id); }
+
+  function addToCart(id){
+    const prod = products.find(p=>p.id===id);
+    if(!prod) return;
+    const idx = findCartIndex(id);
+    if(idx !== -1) cart[idx].qty += 1;
+    else cart.push({ id: prod.id, name: prod.name, price: prod.price, img: prod.img, qty: 1 });
+    saveCartToStorage();
+    refreshCartUI();
+    console.log('Added to cart', cart);
+  }
+
+  function refreshCartUI(){
+    cartCount.textContent = cart.reduce((s,i)=>s+(i.qty||0),0);
+    cartItems.innerHTML = '';
+    cart.forEach(item=>{
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `
+        <img src="${item.img || ''}" alt="${item.name}">
+        <div style="flex:1">
+          <div style="font-weight:700">${item.name}</div>
+          <div style="color:var(--muted);font-size:13px">${formatMYR(item.price)} × ${item.qty}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-weight:800">${formatMYR(item.price * item.qty)}</div>
+          <div style="margin-top:6px;display:flex;gap:6px;justify-content:flex-end">
+            <button data-op="dec" data-id="${item.id}" class="details">−</button>
+            <button data-op="inc" data-id="${item.id}" class="details">+</button>
+            <button data-op="rem" data-id="${item.id}" class="details">Remove</button>
+          </div>
+        </div>
+      `;
+      cartItems.appendChild(div);
+    });
+
+    // save after building (defensive)
+    saveCartToStorage();
+
+    // update total
+    const total = cart.reduce((s,i)=>s + (i.price * (i.qty||0)), 0);
+    cartTotal.textContent = formatMYR(total);
+
+    // attach cart item buttons
+    cartItems.querySelectorAll('button[data-op]').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        const id = +e.currentTarget.dataset.id;
+        const op = e.currentTarget.dataset.op;
+        const idx = findCartIndex(id);
+        if(idx === -1) return;
+        if(op === 'inc') cart[idx].qty += 1;
+        else if(op === 'dec') cart[idx].qty = Math.max(1, cart[idx].qty - 1);
+        else if(op === 'rem') cart.splice(idx, 1);
+        saveCartToStorage();
+        refreshCartUI();
+      });
+    });
+  }
+
+  // ---------- Details / View ----------
+  function viewDetails(id){
+    const p = products.find(x=>x.id===id);
+    if(!p) return;
+    const specs = Object.entries(p.specs || {}).map(([k,v]) => `${k}: ${v}`).join('\\n');
+    alert(`${p.name}\\n\\nPrice: ${formatMYR(p.price)}\\n\\n${specs}`);
+  }
+
+  // ---------- Search + Sort ----------
+  function applyFilter() {
+    const q = (searchInput && searchInput.value ? searchInput.value : '').toLowerCase().trim();
+    const sort = (sortSelect && sortSelect.value) ? sortSelect.value : '';
+    let list = products.slice();
+
+    if(q) {
+      list = list.filter(p =>
+        (p.name || '').toLowerCase().includes(q) ||
+        Object.values(p.specs || {}).join(' ').toLowerCase().includes(q)
+      );
+    }
+
+    if (sort === 'low-high') list.sort((a,b)=>a.price-b.price);
+    else if (sort === 'high-low') list.sort((a,b)=>b.price-a.price);
+
+    renderProducts(list);
+  }
+
+  // ---------- Event listeners ----------
+  if (filterBtn) filterBtn.addEventListener('click', applyFilter);
+  if (sortSelect) sortSelect.addEventListener('change', applyFilter);
+  if (searchInput) searchInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') applyFilter(); });
+
+  openCartBtn.addEventListener('click', ()=> {
+    cartModal.classList.toggle('open');
+    cartModal.setAttribute('aria-hidden', cartModal.classList.contains('open') ? 'false' : 'true');
+  });
+  closeCartBtn.addEventListener('click', ()=> {
+    cartModal.classList.remove('open');
+    cartModal.setAttribute('aria-hidden','true');
+  });
+
+  document.getElementById('checkoutBtn').addEventListener('click', ()=> {
+    if (cart.length === 0) { alert('Your cart is empty.'); return; }
+    // Save cart and go to checkout
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    window.location.href = 'checkout.html';
+  });
+
+  // Sync across tabs
+  window.addEventListener('storage', (e) => {
+    if (e.key === CART_KEY) {
+      try {
+        const newCart = JSON.parse(e.newValue || '[]');
+        cart.length = 0;
+        cart.push(...newCart);
+        refreshCartUI();
+      } catch(err) { console.error('failed to parse storage event', err); }
+    }
+  });
+
+  // ---------- Initialization ----------
+  (function init(){
+    // Restore saved cart BEFORE rendering products
+    const saved = loadCart();
+    cart.length = 0;
+    cart.push(...saved);
+    // Render products and UI
+    renderProducts(products);
+    refreshCartUI();
+    console.log('Init complete. Cart restored:', cart);
+  })();
+</script>
+</body>
+</html>

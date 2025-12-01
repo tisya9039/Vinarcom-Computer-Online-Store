@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Checkout — Vinarcom Computer</title>
+
+<style>
+  :root{
+    --bg:#0b2bd6;
+    --card:#ffffff;
+    --muted:#4b5563;
+    --accent:#06c167;
+    --brand:#ffdd00;
+    --maxw:1200px;
+    --radius:12px;
+    --shadow:0 10px 30px rgba(2,6,23,0.12);
+    font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,#0621b6 0%,#0b2bd6 100%)}
+
+  .wrap{min-height:100%;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px}
+  .site{width:100%;max-width:var(--maxw);background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+
+  header{display:flex;align-items:center;gap:18px;padding:22px 28px;
+    border-bottom:1px solid #eef2f6;
+    background:linear-gradient(90deg,#ffffff 0%,#f8fbff 100%);
+  }
+  .logo{background:linear-gradient(135deg,#0f62fe,#4f46e5);color:#fff;padding:10px 14px;border-radius:10px;font-weight:800}
+  .title{font-size:18px;font-weight:700;color:var(--brand)}
+  nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+  nav a{background:transparent;border:1px solid var(--accent);color:var(--accent);padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;transition:all .12s}
+  nav a:hover{background:var(--accent);color:white;transform:translateY(-2px)}
+  nav a.active{background:var(--accent);color:white;border:0}
+
+  main{padding:28px 32px}
+
+  h1{margin:0;font-size:26px;color:#0b1220;margin-bottom:10px}
+  .lead{color:var(--muted);margin-bottom:22px}
+
+  .checkout-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #eef2f6;
+    background:linear-gradient(180deg,#ffffff,#fdfdff);
+    margin-bottom:14px;
+    box-shadow:0 6px 18px rgba(2,6,23,0.04);
+  }
+
+  .checkout-item img{
+    width:80px;height:60px;object-fit:contain;border-radius:8px;background:#f4f6f9;
+  }
+
+  .item-info{flex:1;margin-left:16px;color:#0b1220}
+  .item-info div:first-child{font-weight:700;font-size:15px}
+  .item-info div:last-child{color:var(--muted);margin-top:4px;font-size:13px}
+
+  .item-controls{display:flex;align-items:center;gap:8px}
+  .item-controls button{
+    padding:8px 12px;border-radius:8px;border:1px solid #e6edf3;background:white;cursor:pointer;font-weight:600;
+  }
+  .item-controls button.remove{
+    background:#ff4d4f;color:white;border:0
+  }
+
+  .total-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px;
+    background:#fbfdff;
+    border-radius:12px;
+    border:1px solid #eef2f6;
+    margin-top:20px;
+    font-size:20px;
+    font-weight:700;
+  }
+
+  .customer-form{
+    margin-top:20px;
+    padding:20px;
+    background:#fbfdff;
+    border-radius:12px;
+    border:1px solid #eef2f6;
+  }
+
+  .customer-form h2{
+    margin:0 0 10px;font-size:20px;
+  }
+
+  .customer-form input, .customer-form textarea{
+    width:100%;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #dce3ec;
+    margin-bottom:12px;
+    font-size:14px;
+  }
+
+  .btn{
+    background:var(--accent);
+    color:white;
+    padding:10px 14px;
+    border-radius:8px;
+    border:0;
+    font-weight:700;
+    cursor:pointer;
+  }
+
+  footer{
+    padding:18px 32px;background:#fbfdff;border-top:1px solid #eef2f6;color:var(--muted);
+    display:flex;justify-content:space-between;align-items:center;margin-top:20px
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="site">
+
+    <header>
+      <div class="logo">VC</div>
+      <div>
+        <div class="title">Vinarcom Computer</div>
+        <div style="font-size:13px;color:var(--muted)">Quality PCs · Networking · Cloud</div>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="recond.html">Shop - Recon</a>
+        <a href="newcom.html">New Laptops</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Your Checkout</h1>
+      <p class="lead">Review your items before completing your order.</p>
+
+      <div id="checkoutItems"></div>
+
+      <div class="total-box">
+        <span>Total:</span>
+        <span>RM <span id="checkoutTotal">0.00</span></span>
+      </div>
+
+      <!-- Customer Details Form -->
+      <div class="customer-form">
+        <h2>Your Details</h2>
+        <input id="custName" type="text" placeholder="Your Name" required>
+        <input id="custPhone" type="text" placeholder="Phone Number" required>
+        <input id="custAddress" type="text" placeholder="Delivery Address" required>
+        <textarea id="custMessage" placeholder="Message (optional)"></textarea>
+
+        <button class="btn" onclick="window.location.href='payment.html'">Proceed to Payment</button>
+      </div>
+
+    </main>
+
+    <footer>
+      <div>© Vinarcom Computer — All rights reserved</div>
+      <div style="font-size:13px;color:var(--muted)">Trusted IT solutions since 2004</div>
+    </footer>
+  </div>
+</div>
+
+<script>
+// Load cart
+function loadCart() {
+  return JSON.parse(localStorage.getItem("vinarcomCart")) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem("vinarcomCart", JSON.stringify(cart));
+}
+
+let cart = loadCart();
+
+const checkoutItemsEl = document.getElementById("checkoutItems");
+const checkoutTotalEl = document.getElementById("checkoutTotal");
+
+// Render checkout
+function renderCheckout() {
+  checkoutItemsEl.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+
+    const div = document.createElement("div");
+    div.className = "checkout-item";
+    div.innerHTML = `
+      <img src="${item.img}" alt="${item.name}">
+      <div class="item-info">
+        <div>${item.name}</div>
+        <div>RM${item.price} × ${item.qty}</div>
+      </div>
+
+      <div class="item-controls">
+        <button onclick="decreaseQty(${index})">−</button>
+        <button onclick="increaseQty(${index})">+</button>
+        <button class="remove" onclick="removeItem(${index})">Remove</button>
+      </div>
+    `;
+    checkoutItemsEl.appendChild(div);
+  });
+
+  checkoutTotalEl.textContent = total.toFixed(2);
+  saveCart(cart);
+}
+
+function increaseQty(index) {
+  cart[index].qty += 1;
+  renderCheckout();
+}
+
+function decreaseQty(index) {
+  if (cart[index].qty > 1) {
+    cart[index].qty -= 1;
+    renderCheckout();
+  }
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  renderCheckout();
+}
+
+renderCheckout();
+</script>
+
+</body>
+</html>

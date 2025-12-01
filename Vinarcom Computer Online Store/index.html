@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Vinarcom Computer — Home</title>
+  <meta name="description" content="Vinarcom Computer — Quality PCs, Networking & Cloud Solutions" />
+  <style>
+    :root{
+      --bg:#0b2bd6;
+      --card:#ffffff;
+      --muted:#4b5563;
+      --accent:#06c167;
+      --brand:#ffdd00;
+      --maxw:1200px;
+      --radius:12px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.12);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#0621b6 0%, #0b2bd6 100%);color:#0b1220}
+    .wrap{min-height:100%;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px}
+    .site{width:100%;max-width:var(--maxw);background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    header{display:flex;align-items:center;gap:18px;padding:22px 28px;border-bottom:1px solid #eef2f6;background:linear-gradient(90deg,#ffffff 0%, #f8fbff 100%)}
+    .logo{background:linear-gradient(135deg,#0f62fe,#4f46e5);color:#fff;padding:10px 14px;border-radius:10px;font-weight:800}
+    .title{font-size:18px;font-weight:700;color:var(--brand)}
+    nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+    nav a{background:transparent;border:1px solid var(--accent);color:var(--accent);padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;transition:all .12s}
+    nav a:hover{background:var(--accent);color:white;transform:translateY(-2px)}
+    main{padding:28px 32px}
+    .hero{display:flex;align-items:center;gap:20px;justify-content:space-between;flex-wrap:wrap}
+    .hero-left{max-width:720px}
+    h1{margin:0;font-size:28px;color:#0b1220}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .card{background:linear-gradient(180deg,#ffffff,#fcfdff);border-radius:12px;padding:14px;border:1px solid #eef2f6;box-shadow:0 6px 18px rgba(2,6,23,0.04);display:flex;flex-direction:column;align-items:stretch}
+    .thumb{height:160px;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .thumb img{max-width:100%;max-height:100%;object-fit:contain}
+    .card h3{font-size:16px;margin:10px 0 6px;color:#0b1220;text-align:left}
+    .card p{font-size:14px;color:var(--muted)}
+    footer{padding:18px 32px;background:#fbfdff;border-top:1px solid #eef2f6;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    @media (max-width:1100px){ .cards{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:700px){ .cards{grid-template-columns:1fr} .hero{flex-direction:column;align-items:flex-start} nav{width:100%;justify-content:flex-end} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="site" role="document">
+      <header>
+        <div class="logo">VC</div>
+        <div>
+          <div class="title">Vinarcom Computer</div>
+          <div style="font-size:13px;color:var(--muted)">Quality PCs · Networking · Cloud</div>
+        </div>
+
+        <nav aria-label="Main navigation">
+          <a href="index.html" style="background:var(--accent);color:white;border:0">Home</a>
+          <a href="recond.html">Shop - Recon Laptops,PC and Monitor</a>
+          <a href="newcom.html">Shop - New Laptops</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-left">
+            <h1>Welcome to Vinarcom Computer</h1>
+            <p class="lead">Your trusted partner for PCs, networking, and cloud solutions. Explore our services and latest laptops.</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="cards">
+            <div class="card">
+              <div class="thumb"><img src="images/newlaptophp3.jpg" alt="Laptop Preview"></div>
+              <h3>HP Elitebook 8 G1</h3>
+              <p>High-performance laptop for business.</p>
+            </div> 
+            <div class="card">
+              <div class="thumb"><img src="images/newlaptopacer6.jpg" alt="Laptop Preview"></div>
+              <h3>ACER Aspire Lite 14</h3>
+              <p>Lightweight and portable, perfect for travel.</p>
+            </div>
+            <div class="card">
+              <div class="thumb"><img src="images/newlaptopasus2.jpg" alt="Laptop Preview"></div>
+              <h3>ASUS TUF Gaming Laptop</h3>
+              <p>Gaming-ready laptop with top-tier graphics.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div>© Vinarcom Computer — All rights reserved</div>
+        <div style="font-size:13px;color:var(--muted)">Trusted IT solutions since 2004</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
+
+
